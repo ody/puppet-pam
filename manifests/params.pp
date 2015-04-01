@@ -5,12 +5,12 @@ class pam::params {
   case $::osfamily {
 
     'Debian' : {
-      $packages    = [ 'libpam-ldap' ]
+      $packages    = [ 'libpam-ldapd' ]
       $prefix_pamd = '/etc/pam.d'
       $owner       = 'root'
       $group       = 'root'
 
-      $package_pam_ldap      = 'libpam-ldap'
+      $package_pam_ldap      = 'libpam-ldapd'
       $pam_ldap_account      = '[default=bad success=ok user_unknown=ignore] pam_ldap.so'
       $pam_ldap_auth         = 'sufficient    pam_ldap.so use_first_pass'
       $pam_ldap_password     = 'sufficient    pam_ldap.so use_authtok'
